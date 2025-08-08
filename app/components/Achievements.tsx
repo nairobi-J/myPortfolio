@@ -5,76 +5,62 @@ import { Award, AlignCenterVertical as Certificate, Trophy, Star } from 'lucide-
 const Achievements = () => {
   const achievements = [
     {
-      title: "Google IT Support Certificate",
-      issuer: "Google via Coursera",
-      date: "2023",
-      description: "Comprehensive program covering IT fundamentals, networking, operating systems, and security",
+      title: "Supervised Machine Learning",
+      issuer: "Coursera",
+      date: "2025",
+      description: "",
       icon: Award,
       color: "bg-orange-100 text-orange-600",
-      image: "https://images.pexels.com/photos/4778611/pexels-photo-4778611.jpeg?auto=compress&cs=tinysrgb&w=400"
+      //image: "https://images.pexels.com/photos/4778611/pexels-photo-4778611.jpeg?auto=compress&cs=tinysrgb&w=400"
     },
     {
-      title: "Meta Front-End Developer Certificate",
-      issuer: "Meta via Coursera",
-      date: "2023",
-      description: "Professional certificate program covering React, JavaScript, HTML/CSS, and modern web development",
+      title: "HackerRank Intermediate database",
+      issuer: "hackerRank",
+      date: "2025",
+      //description: "Professional certificate program covering React, JavaScript, HTML/CSS, and modern web development",
       icon: Certificate,
       color: "bg-blue-100 text-blue-600",
-      image: "https://images.pexels.com/photos/4778611/pexels-photo-4778611.jpeg?auto=compress&cs=tinysrgb&w=400"
+      //image: "https://images.pexels.com/photos/4778611/pexels-photo-4778611.jpeg?auto=compress&cs=tinysrgb&w=400"
     },
     {
-      title: "CS50x: Introduction to Computer Science",
-      issuer: "Harvard University via edX",
-      date: "2022",
-      description: "Harvard's introduction to computer science covering algorithms, data structures, and programming",
+      title: "EDGE - Python & Data Science",
+      issuer: "ICT Ministry of Bangladesh",
+      date: "2024",
+      //description: "Harvard's introduction to computer science covering algorithms, data structures, and programming",
       icon: Star,
       color: "bg-blue-100 text-blue-600",
-      image: "https://images.pexels.com/photos/4778611/pexels-photo-4778611.jpeg?auto=compress&cs=tinysrgb&w=400"
+      //image: "https://images.pexels.com/photos/4778611/pexels-photo-4778611.jpeg?auto=compress&cs=tinysrgb&w=400"
     },
-    {
-      title: "Python for Everybody Specialization",
-      issuer: "University of Michigan via Coursera",
-      date: "2022",
-      description: "Comprehensive Python programming course covering data structures, web scraping, and databases",
-      icon: Certificate,
-      color: "bg-green-100 text-green-600",
-      image: "https://images.pexels.com/photos/4778611/pexels-photo-4778611.jpeg?auto=compress&cs=tinysrgb&w=400"
-    },
-    {
-      title: "JavaScript Algorithms and Data Structures",
-      issuer: "freeCodeCamp",
-      date: "2022",
-      description: "Comprehensive course covering JavaScript fundamentals, algorithms, and data structures",
-      icon: Trophy,
-      color: "bg-purple-100 text-purple-600",
-      image: "https://images.pexels.com/photos/4778611/pexels-photo-4778611.jpeg?auto=compress&cs=tinysrgb&w=400"
-    },
-    {
-      title: "Responsive Web Design Certification",
-      issuer: "freeCodeCamp",
-      date: "2021",
-      description: "Certification in HTML, CSS, responsive design principles, and accessibility",
-      icon: Award,
-      color: "bg-blue-100 text-blue-600",
-      image: "https://images.pexels.com/photos/4778611/pexels-photo-4778611.jpeg?auto=compress&cs=tinysrgb&w=400"
-    }
+   
+   
   ];
 
   const competitions = [
     {
-      title: "2nd Place - University Programming Contest",
-      year: "2023",
-      description: "Secured second position in annual university-wide programming competition"
+      title: "NASA SpaceApp Challenge Finalist",
+      year: "2024",
+      //description: "Secured second position in annual university-wide programming competition"
     },
     {
-      title: "Top 10% - Google Code Jam Qualification Round",
-      year: "2022", 
-      description: "Successfully qualified for next round in Google's annual coding competition"
+      title: "Leading university Heckathon",
+      year: "2024", 
+      //description: "Successfully qualified for next round in Google's annual coding competition"
     },
+     {
+      title: "Therap Javafest 2025",
+      year: "2025", 
+      //description: "Successfully qualified for next round in Google's annual coding competition"
+    },
+     {
+      title: "University innovation Hub",
+      year: "2023", 
+      //description: "Successfully qualified for next round in Google's annual coding competition"
+    },
+    
     {
-      title: "Best Beginner Project - Local Hackathon",
+      title: "Exgeris-1.0",
       year: "2022",
-      description: "Won best beginner project award for innovative solution in 24-hour hackathon"
+      //description: "Won best beginner project award for innovative solution in 24-hour hackathon"
     }
   ];
 
@@ -116,15 +102,13 @@ const Achievements = () => {
         {/* Competition Wins */}
         <div>
           <h3 className="text-3xl font-bold text-center text-gray-900 mb-8">
-            Competition Wins
+            Competitions
           </h3>
           <div className="space-y-6">
             {competitions.map((competition, index) => (
               <div key={index} className="bg-white rounded-2xl p-8 shadow-lg card-hover">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-full flex items-center justify-center flex-shrink-0">
-                    <Trophy className="text-white" size={24} />
-                  </div>
+                  
                   <div>
                     <h4 className="text-2xl font-bold text-gray-900 mb-2">{competition.title}</h4>
                     <p className="text-blue-600 font-medium mb-2">{competition.year}</p>
@@ -137,27 +121,7 @@ const Achievements = () => {
         </div>
 
         {/* Stats */}
-        <div className="mt-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl p-8 text-white">
-          <h3 className="text-3xl font-bold text-center mb-8">Achievement Statistics</h3>
-          <div className="grid md:grid-cols-4 gap-8 text-center">
-            <div>
-              <div className="text-4xl font-bold mb-2">8+</div>
-              <div className="text-blue-100">Certifications</div>
-            </div>
-            <div>
-              <div className="text-4xl font-bold mb-2">5+</div>
-              <div className="text-blue-100">Competition Participations</div>
-            </div>
-            <div>
-              <div className="text-4xl font-bold mb-2">3+</div>
-              <div className="text-blue-100">Years Learning</div>
-            </div>
-            <div>
-              <div className="text-4xl font-bold mb-2">100%</div>
-              <div className="text-blue-100">Dedication</div>
-            </div>
-          </div>
-        </div>
+      
       </div>
     </section>
   );

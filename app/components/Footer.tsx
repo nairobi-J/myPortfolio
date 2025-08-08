@@ -12,11 +12,11 @@ const Footer = () => {
           <div>
             <h3 className="text-2xl font-bold mb-4">
               <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-                John Developer
+                Nusrat Jahan Jerin
               </span>
             </h3>
             <p className="text-gray-400 leading-relaxed">
-              Full-stack developer passionate about creating innovative solutions 
+              Undergrad Student passionate about creating innovative solutions 
               and building amazing digital experiences.
             </p>
           </div>
@@ -51,17 +51,18 @@ const Footer = () => {
             <h4 className="text-lg font-semibold mb-4">Get in Touch</h4>
             <div className="space-y-3">
               <a 
-                href="mailto:john.developer@email.com"
+                href="mailto:jerinusrat001@gmail.com"
                 className="flex items-center gap-3 text-gray-400 hover:text-white transition-colors"
               >
                 <Mail size={18} />
-                john.developer@email.com
+                jerinusrat001@gmail.com
               </a>
               <div className="flex gap-4 mt-4">
                 {[
-                  { icon: Github, href: '#', label: 'GitHub' },
-                  { icon: Linkedin, href: '#', label: 'LinkedIn' },
-                  { icon: Twitter, href: '#', label: 'Twitter' }
+                   { icon: Github, label: "GitHub", href: "https://github.com/nairobi-j" },
+                   { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/nairobi-nusrat/" },
+                   { icon: Twitter, label: "X", href: "@n_xery" },
+                  //{ icon: Twitter, href: '#', label: 'Twitter' }
                 ].map((social, index) => (
                   <a
                     key={index}
@@ -80,10 +81,10 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm">
-            © {currentYear} Your Name. All rights reserved.
+            © {currentYear} Jerrin. All rights reserved.
           </p>
           <p className="text-gray-400 text-sm flex items-center gap-1 mt-4 md:mt-0">
-            Made with <Heart size={16} className="text-red-500" /> and lots of coffee
+            Made with <Heart size={16} className="text-red-500" /> and lots of Teaaaaaaaa
           </p>
         </div>
       </div>

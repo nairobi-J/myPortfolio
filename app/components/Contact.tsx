@@ -29,27 +29,27 @@ const Contact = () => {
     {
       icon: Mail,
       label: "Email",
-      value: "your.email@university.edu",
-      link: "mailto:your.email@university.edu"
+      value: "jerinusrat001@gmail.com",
+      link: "mailto:jerinusrat001@gmail.com"
     },
     {
       icon: Phone,
       label: "Phone",
-      value: "+1 (555) 000-0000",
-      link: "tel:+15550000000"
+      value: "01533750217",
+      link: "tel:+8801533750217"
     },
     {
       icon: MapPin,
       label: "Location",
-      value: "Your City, State",
+      value: "3rd Ladies Hall,Shahjalal University of Science & Technology, Sylhet",
       link: "#"
     }
   ];
 
   const socialLinks = [
-    { icon: Github, label: "GitHub", link: "#" },
-    { icon: Linkedin, label: "LinkedIn", link: "#" },
-    { icon: Twitter, label: "Twitter", link: "#" }
+    { icon: Github, label: "GitHub", link: "https://github.com/nairobi-j" },
+    { icon: Linkedin, label: "LinkedIn", link: "https://www.linkedin.com/in/nairobi-nusrat/" },
+    { icon: Twitter, label: "X", link: "@n_xery" }
   ];
 
   return (
@@ -67,7 +67,11 @@ const Contact = () => {
 
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Information */}
-          <div>
+         
+          {/* Contact Form */}
+        
+        </div>
+         <div>
             <h3 className="text-3xl font-bold text-gray-900 mb-8">Lets Connect</h3>
             <p className="text-lg text-gray-700 mb-8 leading-relaxed">
               Im always excited to discuss new learning opportunities, collaborate on projects, 
@@ -109,88 +113,6 @@ const Contact = () => {
             </div>
           </div>
 
-          {/* Contact Form */}
-          <div>
-            <div className="bg-gray-50 rounded-2xl p-8">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Send Me a Message</h3>
-              
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-2 gap-4">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                      Name
-                    </label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
-                      placeholder="Your name"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                      Email
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
-                      placeholder="your@email.com"
-                    />
-                  </div>
-                </div>
-                
-                <div>
-                  <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
-                    Subject
-                  </label>
-                  <input
-                    type="text"
-                    id="subject"
-                    name="subject"
-                    value={formData.subject}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
-                    placeholder="What's this about?"
-                  />
-                </div>
-                
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                    Message
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                    rows={6}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all resize-none"
-                    placeholder="Tell me about your project or just say hello!"
-                  />
-                </div>
-                
-                <button
-                  type="submit"
-                  className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-4 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2"
-                >
-                  <Send size={20} />
-                  Send Message
-                </button>
-              </form>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );

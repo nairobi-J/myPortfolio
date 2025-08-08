@@ -30,6 +30,14 @@ const ProblemSolving = () => {
       icon: Trophy,
       color: "bg-green-100 text-green-600"
     },
+     {
+      name: "Vjudge",
+      handle: "@Die_01",
+      stats: "141 Problem solved",
+      //ranking: "Silver badges in algorithms",
+      icon: Code,
+      color: "bg-green-100 text-green-600"
+    },
    
   ];
 

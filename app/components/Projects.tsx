@@ -26,7 +26,7 @@ const Projects = () => {
     {
       title: "Treasure Hunting 2D game",
       video:"https://www.youtube.com/embed/t86kfsfDuvI",
-      description: "A basic 2D adventure game developed in Java as a university course project to demonstrate fundamental programming concepts and graphical user interface (GUI) design. The application uses the Java Swing library to create the game window and manage the game loop. The GamePanel class, which is instantiated in the main method, handles the game logic, rendering, and user input. The project served as an introduction to event-driven programming, object-oriented design principles, and the structure of a simple game engine.",
+      description: "A basic 2D adventure game developed in Java as a university course project to demonstrate fundamental programming concepts and graphical user interface (GUI) design. The application uses the Java Swing library to create the game window and manage the game loop. The GamePanel class, which is instantiated in the main method, handles the game logic, rendering, and user input. The project served as an introduction to event-driven programming, object-oriented design principles, and the structure of a simple game engine.A video demonstration is also attached.",
       image: "treasure.png",
       technologies: ["Java", "Java-Swing"],
       github: "https://github.com/nairobi-J/Treasure-Hunting",
@@ -35,11 +35,22 @@ const Projects = () => {
     },
     {
       title: "Space Impact Game",
-      description: "A classic arcade-style Space Impact game developed in C++ as a university project. The game features a spaceship that can shoot enemies, which are represented as flying objects, within a 2D environment. The project demonstrates core C++ programming concepts, including object-oriented design for game elements like the player, enemies, and bullets. It also utilizes a graphics library, likely SFML or a similar framework (inferred from the .wav and .jpg files), to handle rendering, sound effects, and user input, showcasing an understanding of game development principles..",
-      image: "https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=600",
+      description: "Space Impact is a classic 2D arcade-style shooter game developed in C++. As a university project, it features a spaceship that the player controls with three lives and the goal of achieving a high score. The game includes multiple levels, each with different enemy spaceships. A dedicated menu system allows players to navigate to a Play page to start the game, an Options page to adjust settings like the level, and an About page for project information. This project showcases fundamental C++ programming concepts, including object-oriented design for game components and event handling for user input. A video demonstration is also attached.",
+      image: "Spaceimpact.png",
+      video:"https://www.youtube.com/embed/bfcc0P085Mw",
       technologies: ["C++", "SFML"],
       github: "https://github.com/nairobi-J/space-Impact-j",
-      live: "#",
+      live: "https://www.youtube.com/embed/bfcc0P085Mw",
+      hasVideo: true
+    },
+    {
+      title: "Android Project",
+      description: "Used Flutter to make 2 mini android project one is todo , another one is pomodoro",
+      image: "",
+      video:"https://www.youtube.com/embed/bfcc0P085Mw",
+      technologies: ["Flutter", "C++"],
+      github: "https://github.com/nairobi-J/Android-App",
+      live: "https://www.youtube.com/embed/bfcc0P085Mw",
       hasVideo: false
     }
   ];

@@ -4,9 +4,13 @@ import React, { useEffect, useState } from 'react';
 
 const Skills = () => {
   const skillCategories = [
+
     {
+      
+
       title: "Frontend Development",
       skills: [
+        "Next.js",
         "React.js",
         "TypeScript", 
         "Vue.js",
@@ -18,8 +22,9 @@ const Skills = () => {
       title: "Backend Development", 
       skills: [
         "Node.js",
-        "Python",
         "Express.js", 
+        "SpringBoot",
+         "Python",
         "PostgreSQL",
         "MongoDB"
       ]
@@ -29,9 +34,13 @@ const Skills = () => {
       skills: [
         "Git/GitHub",
         "Docker",
-        "AWS",
-        "Firebase", 
-        "Figma"
+        "Azure",
+        "Figma",
+        "Flask",
+        "Supabase",
+        "Java-Swing",
+        "SFML",
+        "Flutter"
       ]
     }
   ];
@@ -74,7 +83,7 @@ const Skills = () => {
             Programming Languages
           </h3>
           <div className="flex flex-wrap justify-center gap-4">
-            {['JavaScript', 'TypeScript', 'Python', 'Java', 'C++', 'PHP', 'Go', 'Rust'].map((lang, index) => (
+            {['C', 'C++', 'Java','Python','JavaScript', 'TypeScript', ].map((lang, index) => (
               <span 
                 key={index}
                 className="bg-white px-6 py-3 rounded-full shadow-md text-gray-700 font-medium hover:shadow-lg transition-shadow duration-300"
