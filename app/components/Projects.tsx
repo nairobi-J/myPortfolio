@@ -17,7 +17,7 @@ const Projects = () => {
     {
       title: "Home Rental Website",
       description: "A full-stack web application for My Course - Web Technology(3/1)  designed to facilitate the process of finding and renting homes. Users can browse a comprehensive catalog of properties, apply filters to narrow down their search, and view detailed information for each listing. The platform includes a robust state management system to ensure a smooth and responsive user experience as they interact with the search functionality and property listings.This project was developed as a hands-on learning experience to deepen my understanding of client-side state management in React, as well as the integration of a backend to handle data persistence and application logic.",
-      image: "https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=600",
+      image: "basha-vara.png",
       technologies: ["React", "MongoDb", "Node.js", "Express"],
       github: "https://github.com/nairobi-J/Home_rental_Website",
       live: "#",
@@ -27,7 +27,7 @@ const Projects = () => {
       title: "Treasure Hunting 2D game",
       video:"https://www.youtube.com/embed/t86kfsfDuvI",
       description: "A basic 2D adventure game developed in Java as a university course project to demonstrate fundamental programming concepts and graphical user interface (GUI) design. The application uses the Java Swing library to create the game window and manage the game loop. The GamePanel class, which is instantiated in the main method, handles the game logic, rendering, and user input. The project served as an introduction to event-driven programming, object-oriented design principles, and the structure of a simple game engine.A video demonstration is also attached.",
-      image: "treasure.png",
+      image: "Treasure.png",
       technologies: ["Java", "Java-Swing"],
       github: "https://github.com/nairobi-J/Treasure-Hunting",
       live: "https://jerry2berry.itch.io/mini-treasurehunting",
