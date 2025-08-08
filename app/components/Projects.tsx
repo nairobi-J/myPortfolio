@@ -80,9 +80,9 @@ const Projects = () => {
                   className="w-full h-80 object-cover"
                 />
                 {project.hasVideo && (
-                  <button
-                    onClick={() => setSelectedProject(project)}
+                  <button onClick={() => setSelectedProject(project)}
                     className="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    title='hi'
                   >
                     <div className="bg-white rounded-full p-4">
                       <Play className="text-blue-600" size={24} />

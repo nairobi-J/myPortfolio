@@ -81,11 +81,7 @@ const Achievements = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {achievements.map((achievement, index) => (
             <div key={index} className="bg-white rounded-2xl shadow-lg overflow-hidden card-hover">
-              <img 
-                src={achievement.image}
-                alt={achievement.title}
-                className="w-full h-40 object-cover"
-              />
+             
               <div className="p-6">
                 <div className={`w-12 h-12 rounded-full ${achievement.color} flex items-center justify-center mb-4`}>
                   <achievement.icon size={24} />
@@ -112,7 +108,7 @@ const Achievements = () => {
                   <div>
                     <h4 className="text-2xl font-bold text-gray-900 mb-2">{competition.title}</h4>
                     <p className="text-blue-600 font-medium mb-2">{competition.year}</p>
-                    <p className="text-gray-700 leading-relaxed">{competition.description}</p>
+                    
                   </div>
                 </div>
               </div>
