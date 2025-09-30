@@ -14,13 +14,53 @@ const Projects = () => {
       live: "https://gradguide.vercel.app",
       hasVideo: false
     },
+     {
+      title: "BuzzQuiz",
+      description: "create quiz, give test, get ai powered analysis if you got it wrong , history generated based on your attempts and ai powered resources and suggestions for weak courses",
+      image: "buzzquiz.png",
+      //video: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      technologies: ["Next.js", "Node.js", "Mongodb", "Express","Azure"],
+      github: "https://github.com/nairobi-J/BuzzQuiz",
+      live: "https://buzz-quiz.vercel.app",
+      hasVideo: false
+    },
+     {
+      title: "StorAnything",
+      description: "Store any kind of files and manage it effectively!",
+      image: "store.png",
+      //video: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      technologies: ["Java", "Springboot", "NeonDb", "Clerk","Azure-Blob", "Docker"],
+      github: "https://github.com/nairobi-J/StoreAnything",
+      live: "https://store-anything.vercel.app",
+      hasVideo: false
+    },
+    {
+      title: "Quran-Tafsir",
+      description: "Basing on the verses given as an input ai powered explanation and other relevant quranic verses , ai powered video suggestions(which can be played within website)",
+      image: "quran.png",
+      //video: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      technologies: ["JavaScript", "Node.js", "MongoDb", "Clerk","Azure"],
+      github: "https://github.com/nairobi-J/Quran-Dars",
+      live: "https://quran-tafsir-delta.vercel.app",
+      hasVideo: false
+    },
+
     {
       title: "Home Rental Website",
       description: "A full-stack web application for My Course - Web Technology(3/1)  designed to facilitate the process of finding and renting homes. Users can browse a comprehensive catalog of properties, apply filters to narrow down their search, and view detailed information for each listing. The platform includes a robust state management system to ensure a smooth and responsive user experience as they interact with the search functionality and property listings.This project was developed as a hands-on learning experience to deepen my understanding of client-side state management in React, as well as the integration of a backend to handle data persistence and application logic.",
       image: "basha-vara.png",
       technologies: ["React", "MongoDb", "Node.js", "Express"],
       github: "https://github.com/nairobi-J/Home_rental_Website",
-      live: "#",
+      //live: "#",
+      hasVideo: false
+    },
+    {
+      title: "Blue Lab Chair Detection",
+      description: "Trained with customised dataset using roboflow",
+      image: "chair.png",
+      technologies: ["Python", "HTML", "Flask"],
+      github: "https://github.com/nairobi-J/Blue-Chair-Detetion",
+      //live: "#",
       hasVideo: false
     },
     {
@@ -46,11 +86,11 @@ const Projects = () => {
     {
       title: "Android Project",
       description: "Used Flutter to make 2 mini android project one is todo , another one is pomodoro",
-      image: "",
+      image: "android.png",
       video:"https://www.youtube.com/embed/bfcc0P085Mw",
       technologies: ["Flutter", "C++"],
       github: "https://github.com/nairobi-J/Android-App",
-      live: "https://www.youtube.com/embed/bfcc0P085Mw",
+      //live: "https://www.youtube.com/embed/bfcc0P085Mw",
       hasVideo: false
     }
   ];
