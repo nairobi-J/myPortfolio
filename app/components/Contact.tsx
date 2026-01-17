@@ -49,7 +49,7 @@ const Contact = () => {
   const socialLinks = [
     { icon: Github, label: "GitHub", link: "https://github.com/nairobi-j" },
     { icon: Linkedin, label: "LinkedIn", link: "https://www.linkedin.com/in/nairobi-nusrat/" },
-    { icon: Twitter, label: "X", link: "@n_xery" }
+    { icon: Twitter, label: "X", link: "https://x.com/n_xery" }
   ];
 
   return (
