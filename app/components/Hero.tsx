@@ -38,7 +38,7 @@ const Hero = () => {
             <a href="https://www.linkedin.com/in/nairobi-nusrat/" className="bg-white/20 backdrop-blur-sm p-3 rounded-full hover:bg-white/30 transition-all duration-300 transform hover:scale-110">
               <Linkedin size={24} />
             </a>
-            <a href="jerinusrat001@gmail.com" className="bg-white/20 backdrop-blur-sm p-3 rounded-full hover:bg-white/30 transition-all duration-300 transform hover:scale-110">
+            <a href="mailto:jerinusrat001@gmail.com?subject=Hello, Jerin!&body=" className="bg-white/20 backdrop-blur-sm p-3 rounded-full hover:bg-white/30 transition-all duration-300 transform hover:scale-110">
               <Mail size={24} />
             </a>
           </div>
