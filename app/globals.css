@@ -1,26 +1,32 @@
 @import "tailwindcss";
 
+/* ===== Survey Corps design system ===== */
+@theme {
+  --color-ink: #15110d;
+  --color-ink-soft: #1c1712;
+  --color-ink-line: #2a231b;
+  --color-parchment: #e9dcc2;
+  --color-parchment-dim: #cdbf9e;
+  --color-gold: #b8924c;
+  --color-crimson: #8a2424;
+  --color-crimson-bright: #b33030;
+  --color-corps-green: #33503e;
 
+  --font-display: var(--font-cinzel), serif;
+  --font-label: var(--font-oswald), sans-serif;
+}
 
 * {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-geist-sans), sans-serif;
 }
 
 html {
   scroll-behavior: smooth;
 }
 
-.gradient-bg {
-  background: linear-gradient(135deg, #a2aff2 20%, #a78ac5 1%);
-}
-
-.card-hover {
-  transition: all 0.3s ease;
-}
-
-.card-hover:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+body {
+  background-color: var(--color-ink);
+  color: var(--color-parchment);
 }
 
 .section-padding {
@@ -33,15 +39,328 @@ html {
   }
 }
 
-.animate-float {
-  animation: float 6s ease-in-out infinite;
+/* Recurring scanline + grain texture used behind every section */
+.corps-texture {
+  position: relative;
+  overflow: hidden;
 }
 
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-20px); }
+/* Content sits above the ambient glow layer (::after) regardless of DOM order */
+.corps-texture > div {
+  position: relative;
+  z-index: 1;
 }
 
-.skill-bar {
-  transition: width 1s ease-in-out;
+.corps-texture::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.4;
+  background-image: repeating-linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.012) 0px,
+    transparent 1px,
+    transparent 2px
+  );
+}
+
+/* Slow-drifting torchlight glow — gives every dark section a living, breathing backdrop */
+@keyframes ambient-drift {
+  0% { transform: translate(0%, 0%) scale(1); }
+  50% { transform: translate(3%, -3%) scale(1.08); }
+  100% { transform: translate(-3%, 2%) scale(1); }
+}
+
+.corps-texture::after {
+  content: "";
+  position: absolute;
+  inset: -15%;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle at 22% 28%, rgba(138, 36, 36, 0.14), transparent 38%),
+    radial-gradient(circle at 78% 72%, rgba(184, 146, 76, 0.12), transparent 42%);
+  animation: ambient-drift 22s ease-in-out infinite alternate;
+}
+
+/* Dossier-style card used across sections (projects, achievements, etc.) */
+.dossier-card {
+  position: relative;
+  background: linear-gradient(
+    135deg,
+    rgba(233, 220, 194, 0.06),
+    rgba(233, 220, 194, 0.025)
+  );
+  border: 1px solid rgba(184, 146, 76, 0.3);
+  box-shadow: 0 8px 20px -10px rgba(0, 0, 0, 0.5);
+  transition: all 0.35s ease;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.dossier-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    115deg,
+    transparent 40%,
+    rgba(184, 146, 76, 0.16) 50%,
+    transparent 60%
+  );
+  background-size: 250% 250%;
+  background-position: 120% 0%;
+  opacity: 0;
+  transition: opacity 0.3s ease, background-position 0.7s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.dossier-card:hover {
+  border-color: rgba(184, 146, 76, 0.6);
+  transform: translateY(-6px);
+  box-shadow: 0 24px 40px -15px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(184, 146, 76, 0.15);
+}
+
+.dossier-card:hover::after {
+  opacity: 1;
+  background-position: -20% 0%;
+}
+
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.45), 0 10px 10px -5px rgba(0, 0, 0, 0.3);
+}
+
+/* ===== Entrance + ambient animations ===== */
+
+@keyframes hero-rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hero-flicker {
+  0%, 100% { opacity: 1; }
+  45% { opacity: 0.94; }
+  50% { opacity: 1; }
+  72% { opacity: 0.97; }
+  78% { opacity: 1; }
+}
+
+@keyframes hero-draw-wing {
+  from { stroke-dashoffset: 1; }
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes emblem-drift {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(0.6deg); }
+}
+
+.reveal {
+  opacity: 0;
+  animation: hero-rise 0.8s ease-out forwards;
+  animation-delay: 0.15s;
+}
+
+.animate-flicker {
+  animation: hero-flicker 6s ease-in-out infinite;
+}
+
+.animate-draw-wing,
+.animate-draw-wing path {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: hero-draw-wing 1.8s ease-out forwards;
+  animation-delay: 0.2s;
+}
+
+.animate-emblem-drift {
+  animation: emblem-drift 8s ease-in-out infinite;
+  animation-delay: 1.6s;
+}
+
+/* ===== Scroll-triggered reveal (Reveal.tsx) ===== */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal-on-scroll.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== Section divider shimmer ===== */
+@keyframes divider-shimmer {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+.divider-shimmer {
+  background-image: linear-gradient(
+    90deg,
+    var(--color-crimson) 0%,
+    var(--color-gold) 25%,
+    var(--color-parchment) 50%,
+    var(--color-gold) 75%,
+    var(--color-crimson) 100%
+  );
+  background-size: 200% 100%;
+  animation: divider-shimmer 3s linear infinite;
+}
+
+/* ===== Idle glow-pulse for primary CTA ===== */
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 0px rgba(179, 48, 48, 0); }
+  50% { box-shadow: 0 0 24px 4px rgba(179, 48, 48, 0.45); }
+}
+
+.glow-pulse {
+  animation: glow-pulse 3.2s ease-in-out infinite;
+}
+
+/* ===== Slow rotating decorative ring ===== */
+@keyframes rotate-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.rotate-slow {
+  animation: rotate-slow 40s linear infinite;
+}
+
+/* ===== Rubber-stamp text (status marks: DEPLOYED, ACTIVE, UNCHARTED...) ===== */
+.stamp {
+  display: inline-block;
+  font-family: var(--font-label);
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  border: 2px solid currentColor;
+  border-radius: 4px;
+  padding: 0.2em 0.6em;
+  transform: rotate(-8deg);
+  opacity: 0.85;
+  mix-blend-mode: screen;
+}
+
+/* ===== Wood-plank board background (ranking board, medal wall) ===== */
+.plank-board {
+  background-image:
+    repeating-linear-gradient(90deg, rgba(0,0,0,0.18) 0px, transparent 2px, transparent 64px, rgba(0,0,0,0.18) 66px),
+    linear-gradient(180deg, #2a1d12 0%, #1f150d 100%);
+  border: 1px solid rgba(184, 146, 76, 0.35);
+}
+
+/* Corner rivets for plank/gear panels */
+.rivets::before,
+.rivets::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(184, 146, 76, 0.55);
+  box-shadow: 0 1px 1px rgba(0,0,0,0.6);
+}
+.rivets::before { top: 8px; left: 8px; }
+.rivets::after { top: 8px; right: 8px; }
+
+/* ===== Torn / jagged map edge ===== */
+.torn-edge {
+  clip-path: polygon(
+    0% 2%, 3% 0%, 8% 1.5%, 15% 0%, 22% 1.2%, 30% 0%, 38% 1.5%, 46% 0%,
+    54% 1.2%, 62% 0%, 70% 1.5%, 78% 0%, 86% 1.2%, 94% 0%, 100% 2%,
+    100% 98%, 96% 100%, 88% 98.5%, 80% 100%, 72% 98%, 64% 100%, 56% 98.5%,
+    48% 100%, 40% 98%, 32% 100%, 24% 98.5%, 16% 100%, 8% 98%, 2% 100%, 0% 98%
+  );
+}
+
+/* ===== Luggage-tag notch (skills / gear loadout) ===== */
+.tag-label {
+  clip-path: polygon(12% 0%, 100% 0%, 100% 100%, 12% 100%, 0% 50%);
+}
+
+/* ===== Hazard stripe accent ===== */
+.hazard-stripe {
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgba(184, 146, 76, 0.5) 0px,
+    rgba(184, 146, 76, 0.5) 10px,
+    transparent 10px,
+    transparent 20px
+  );
+}
+
+/* ===== Hero name — slow torchlit glow pulse, like carved stone catching firelight ===== */
+@keyframes text-glow-pulse {
+  0%, 100% { text-shadow: 0 2px 24px rgba(0,0,0,0.5), 0 0 0px rgba(184,146,76,0); }
+  50% { text-shadow: 0 2px 24px rgba(0,0,0,0.5), 0 0 32px rgba(184,146,76,0.35); }
+}
+
+.text-glow-pulse {
+  animation: text-glow-pulse 5s ease-in-out infinite;
+}
+
+/* ===== One-time light sweep across the Hero on load — like a searchlight crossing the wall ===== */
+@keyframes light-sweep {
+  0% { transform: translateX(-60%) skewX(-12deg); opacity: 0; }
+  15% { opacity: 0.5; }
+  60% { opacity: 0.15; }
+  100% { transform: translateX(160%) skewX(-12deg); opacity: 0; }
+}
+
+.light-sweep {
+  animation: light-sweep 2.6s ease-out 1 both;
+  animation-delay: 0.4s;
+}
+
+/* ===== Drifting embers (Hero atmosphere) ===== */
+@keyframes ember-rise {
+  0% { transform: translateY(0) translateX(0); opacity: 0; }
+  10% { opacity: 0.8; }
+  100% { transform: translateY(-420px) translateX(20px); opacity: 0; }
+}
+
+.ember {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: #d98b3a;
+  box-shadow: 0 0 6px 2px rgba(217, 139, 58, 0.6);
+  animation: ember-rise 7s ease-in infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .animate-flicker,
+  .animate-draw-wing,
+  .animate-draw-wing path,
+  .animate-emblem-drift,
+  .reveal-on-scroll,
+  .divider-shimmer,
+  .glow-pulse,
+  .rotate-slow,
+  .ember,
+  .text-glow-pulse,
+  .light-sweep,
+  .corps-texture::after {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    stroke-dashoffset: 0 !important;
+  }
 }

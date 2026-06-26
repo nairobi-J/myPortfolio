@@ -6,6 +6,7 @@ import Projects from './components/Projects';
 import Experience from './components/Experience';
 import Skills from './components/Skills';
 import ProblemSolving from './components/ProblemSolving';
+import HCIResearch from './components/HCIResearch';
 import Achievements from './components/Achievements';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
@@ -17,15 +18,11 @@ function App() {
       <main>
         <Hero />
         <Experience />
-         <Projects />
-         
-          <ProblemSolving />
-          <Skills />
-       
+        <Projects />
+        <Skills />
+        <ProblemSolving />
+        <HCIResearch />
         <About />
-       
-        
-       
         <Achievements />
         <Contact />
       </main>

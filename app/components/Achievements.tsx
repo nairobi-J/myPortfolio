@@ -1,123 +1,66 @@
 "use client"
 import React from 'react';
-import { Award, AlignCenterVertical as Certificate, Trophy, Star } from 'lucide-react';
+import SectionHeading from './SectionHeading';
+import Reveal from './Reveal';
+import { Medal } from './Motifs';
+
+const achievements = [
+  { title: "Supervised Machine Learning", issuer: "Coursera", date: "2025" },
+  { title: "HackerRank Intermediate Database", issuer: "HackerRank", date: "2025" },
+  { title: "EDGE - Python & Data Science", issuer: "ICT Ministry of Bangladesh", date: "2024" },
+];
+
+const competitions = [
+  { title: "NASA SpaceApp Challenge Finalist", year: "2024" },
+  { title: "Leading University Hackathon", year: "2024" },
+  { title: "Therap Javafest 2025", year: "2025" },
+  { title: "University Innovation Hub", year: "2023" },
+  { title: "Exgeris-1.0", year: "2022" }
+];
 
 const Achievements = () => {
-  const achievements = [
-    {
-      title: "Supervised Machine Learning",
-      issuer: "Coursera",
-      date: "2025",
-      description: "",
-      icon: Award,
-      color: "bg-orange-100 text-orange-600",
-      //image: "https://images.pexels.com/photos/4778611/pexels-photo-4778611.jpeg?auto=compress&cs=tinysrgb&w=400"
-    },
-    {
-      title: "HackerRank Intermediate database",
-      issuer: "hackerRank",
-      date: "2025",
-      //description: "Professional certificate program covering React, JavaScript, HTML/CSS, and modern web development",
-      icon: Certificate,
-      color: "bg-blue-100 text-blue-600",
-      //image: "https://images.pexels.com/photos/4778611/pexels-photo-4778611.jpeg?auto=compress&cs=tinysrgb&w=400"
-    },
-    {
-      title: "EDGE - Python & Data Science",
-      issuer: "ICT Ministry of Bangladesh",
-      date: "2024",
-      //description: "Harvard's introduction to computer science covering algorithms, data structures, and programming",
-      icon: Star,
-      color: "bg-blue-100 text-blue-600",
-      //image: "https://images.pexels.com/photos/4778611/pexels-photo-4778611.jpeg?auto=compress&cs=tinysrgb&w=400"
-    },
-   
-   
-  ];
-
-  const competitions = [
-    {
-      title: "NASA SpaceApp Challenge Finalist",
-      year: "2024",
-      //description: "Secured second position in annual university-wide programming competition"
-    },
-    {
-      title: "Leading university Heckathon",
-      year: "2024", 
-      //description: "Successfully qualified for next round in Google's annual coding competition"
-    },
-     {
-      title: "Therap Javafest 2025",
-      year: "2025", 
-      //description: "Successfully qualified for next round in Google's annual coding competition"
-    },
-     {
-      title: "University innovation Hub",
-      year: "2023", 
-      //description: "Successfully qualified for next round in Google's annual coding competition"
-    },
-    
-    {
-      title: "Exgeris-1.0",
-      year: "2022",
-      //description: "Won best beginner project award for innovative solution in 24-hour hackathon"
-    }
-  ];
-
   return (
-    <section id="achievements" className="section-padding bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Achievements & <span className="text-blue-600">Certifications</span>
-          </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mb-6"></div>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Professional certifications and achievements that validate my expertise
-          </p>
-        </div>
+    <section id="achievements" className="section-padding bg-ink corps-texture">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <SectionHeading
+          eyebrow="Wall Of Honor"
+          title={<>Commendations & <span className="text-crimson-bright">Medals</span></>}
+          subtitle="Certifications earned and competitions fought — mounted here the way a Corps mess hall keeps its honors."
+        />
 
-        {/* Certifications */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-          {achievements.map((achievement, index) => (
-            <div key={index} className="bg-white rounded-2xl shadow-lg overflow-hidden card-hover">
-             
-              <div className="p-6">
-                <div className={`w-12 h-12 rounded-full ${achievement.color} flex items-center justify-center mb-4`}>
-                  <achievement.icon size={24} />
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">{achievement.title}</h3>
-                <p className="text-blue-600 font-medium mb-2">{achievement.issuer}</p>
-                <p className="text-gray-500 text-sm mb-3">{achievement.date}</p>
-                <p className="text-gray-700 leading-relaxed">{achievement.description}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Competition Wins */}
-        <div>
-          <h3 className="text-3xl font-bold text-center text-gray-900 mb-8">
-            Competitions
-          </h3>
-          <div className="space-y-6">
-            {competitions.map((competition, index) => (
-              <div key={index} className="bg-white rounded-2xl p-8 shadow-lg card-hover">
-                <div className="flex items-start gap-4">
-                  
-                  <div>
-                    <h4 className="text-2xl font-bold text-gray-900 mb-2">{competition.title}</h4>
-                    <p className="text-blue-600 font-medium mb-2">{competition.year}</p>
-                    
-                  </div>
-                </div>
-              </div>
+        {/* Medal wall */}
+        <div className="plank-board rivets relative rounded-sm p-6 md:p-10 mb-16">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {achievements.map((achievement, index) => (
+              <Reveal key={index} delay={index * 100} className="flex flex-col items-center text-center">
+                <Medal className="w-16 h-20 text-gold mb-3 drop-shadow-[0_4px_10px_rgba(0,0,0,0.5)] transition-transform duration-300 hover:scale-110 hover:-rotate-3" />
+                <h3 className="font-display text-base font-bold text-parchment leading-snug">{achievement.title}</h3>
+                <p className="text-gold text-sm font-medium mt-1">{achievement.issuer}</p>
+                <p className="text-parchment-dim text-xs">{achievement.date}</p>
+              </Reveal>
             ))}
           </div>
         </div>
 
-        {/* Stats */}
-      
+        {/* Campaign ribbons */}
+        <div>
+          <h3 className="font-display text-3xl font-bold text-center text-parchment mb-8">
+            Campaign Record
+          </h3>
+          <div className="space-y-3 max-w-3xl mx-auto">
+            {competitions.map((competition, index) => (
+              <Reveal key={index} delay={index * 80}>
+                <div className="flex items-center gap-0 dossier-card rounded-sm overflow-hidden">
+                  <div className="w-2.5 self-stretch bg-gradient-to-b from-crimson-bright via-gold to-corps-green" />
+                  <div className="flex-1 flex flex-wrap items-baseline justify-between gap-2 px-6 py-4">
+                    <h4 className="font-display text-lg md:text-xl font-bold text-parchment">{competition.title}</h4>
+                    <span className="font-label text-sm tracking-wide text-gold">{competition.year}</span>
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );
