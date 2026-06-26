@@ -8,15 +8,15 @@ interface SectionHeadingProps {
 }
 
 const SectionHeading = ({ eyebrow, title, subtitle }: SectionHeadingProps) => (
-  <Reveal className="text-center mb-16">
-    <div className="inline-flex items-center gap-3.5 mb-5">
-      <span className="w-9 h-[2px] bg-gold" />
-      <span className="font-label text-[13px] tracking-[0.32em] uppercase text-gold font-medium">
+  <Reveal className="text-center mb-16 px-2">
+    <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3.5 mb-5">
+      <span className="hidden sm:inline-block w-9 h-[2px] bg-gold" />
+      <span className="font-label text-[11px] sm:text-[13px] tracking-[0.18em] sm:tracking-[0.32em] uppercase text-gold font-medium">
         {eyebrow}
       </span>
-      <span className="w-9 h-[2px] bg-gold" />
+      <span className="hidden sm:inline-block w-9 h-[2px] bg-gold" />
     </div>
-    <h2 className="font-display text-4xl md:text-5xl font-bold text-parchment mb-6">
+    <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-parchment mb-6">
       {title}
     </h2>
     <div className="w-24 h-1 rounded-full divider-shimmer mx-auto" />

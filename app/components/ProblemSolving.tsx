@@ -53,22 +53,22 @@ const ProblemSolving = () => {
               <Reveal
                 key={platform.name}
                 delay={index * 100}
-                className="group flex items-center gap-4 md:gap-6 bg-ink/40 hover:bg-ink/70 border border-gold/15 hover:border-gold/40 rounded-sm px-4 md:px-6 py-4 transition-colors duration-300"
+                className="group flex flex-wrap items-center gap-x-4 gap-y-2 md:gap-6 bg-ink/40 hover:bg-ink/70 border border-gold/15 hover:border-gold/40 rounded-sm px-4 md:px-6 py-4 transition-colors duration-300"
               >
                 <span
-                  className="font-display font-black text-4xl md:text-5xl leading-none text-transparent shrink-0 w-[1.4em] text-center"
+                  className="font-display font-black text-3xl sm:text-4xl md:text-5xl leading-none text-transparent shrink-0 w-[1.2em] sm:w-[1.4em] text-center"
                   style={{ WebkitTextStroke: '1.5px #b8924c' }}
                 >
                   {String(index + 1).padStart(2, '0')}
                 </span>
-                <div className="flex-1 min-w-0">
+                <div className="flex-1 min-w-0 basis-40">
                   <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
                     <h3 className="font-display text-lg md:text-xl font-bold text-parchment">{platform.name}</h3>
                     <span className="text-parchment-dim text-sm font-label tracking-wide">{platform.handle}</span>
                   </div>
                   <p className="text-parchment-dim text-sm mt-1">{platform.stats}</p>
                 </div>
-                <span className="font-label text-xs md:text-sm tracking-[0.1em] uppercase text-gold border border-gold/30 rounded-full px-3 py-1.5 whitespace-nowrap group-hover:bg-gold/10 transition-colors">
+                <span className="font-label text-xs md:text-sm tracking-[0.1em] uppercase text-gold border border-gold/30 rounded-full px-3 py-1.5 whitespace-nowrap group-hover:bg-gold/10 transition-colors ml-[3.4em] sm:ml-0">
                   {platform.metric}
                 </span>
               </Reveal>

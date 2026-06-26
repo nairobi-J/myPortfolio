@@ -95,7 +95,7 @@ const Hero = () => {
             src="/levi.webp"
             alt=""
             onError={() => setLeviLoaded(false)}
-            className="absolute right-0 bottom-0 h-[105%] w-auto max-w-none object-contain object-bottom opacity-50"
+            className="absolute right-0 bottom-0 h-[55%] sm:h-[75%] md:h-[90%] lg:h-[105%] w-auto max-w-none object-contain object-bottom opacity-40 sm:opacity-50"
             style={{
               filter: "grayscale(0.55) contrast(1.1) brightness(0.85) sepia(0.15)",
               WebkitMaskImage:
@@ -171,10 +171,10 @@ const Hero = () => {
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-10 lg:px-14 w-full">
         {/* Eyebrow */}
-        <div className="reveal flex items-center gap-3.5 mb-5"
+        <div className="reveal flex flex-wrap items-center gap-2 sm:gap-3.5 mb-5"
           style={{ animationDelay: "0.15s" }}>
-          <span className="w-11 h-[2px] bg-gold" />
-          <span className="font-label text-[13px] tracking-[0.32em] uppercase text-gold font-medium">
+          <span className="hidden sm:inline-block w-11 h-[2px] bg-gold" />
+          <span className="font-label text-[11px] sm:text-[13px] tracking-[0.16em] sm:tracking-[0.32em] uppercase text-gold font-medium">
             Survey Corps <span className="text-crimson-bright">&middot;</span> Recruit File No. 104
           </span>
         </div>
@@ -200,10 +200,10 @@ const Hero = () => {
         </h1>
 
         {/* Role line */}
-        <p className="reveal flex items-center gap-2.5 font-label text-[15px] md:text-[18px] tracking-[0.06em] uppercase text-gold font-medium mb-8"
+        <p className="reveal flex flex-wrap items-center gap-2.5 font-label text-[13px] sm:text-[15px] md:text-[18px] tracking-[0.04em] sm:tracking-[0.06em] uppercase text-gold font-medium mb-8"
           style={{ animationDelay: "0.45s" }}>
           <span
-            className="w-2 h-2 inline-block bg-crimson-bright"
+            className="w-2 h-2 inline-block bg-crimson-bright shrink-0"
             style={{ clipPath: "polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)" }}
           />
           Software Engineering Cadet &middot; HCI Researcher in training
